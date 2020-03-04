@@ -54,6 +54,20 @@ section { padding: 80px 0px; }
     margin-bottom: 10px;
 }
 
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color:  #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+
+    /* To align text and icons */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
 
 /* HEADER */
 
@@ -62,6 +76,7 @@ header {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -149,8 +164,25 @@ h3 {
 	margin-bottom: 15px;
 }
 
+/* LINKS */
+
+a:link,
+a:visited {
+    color:  #e67e22;
+    text-decoration: none; 
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+   
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
 
 
+}
 
 /*  BUTTONS */
 
@@ -199,19 +231,19 @@ h3 {
 }
 .meals-showcase {
     list-style: none;
-    width: 100%;
+    width: 100%; /* Will fill 100% of browser, not of the 1140px, no row class*/
 }
 
 .meals-showcase li {
     display: block;
     float: left;
-    width: 25%; /*because 4*25 is 100 */
+    width: 25%; /*because 4*25 is 100 */ /* 4 images per row/ ul element */
 }
 
 .meal-photo {
     width: 100%;
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; /* Keeps images contained */
     background-color: #000;
 
 }
@@ -227,5 +259,275 @@ h3 {
 .meal-photo img:hover {
     opacity: 1;
     transform: scale(1.03);
+
+}
+
+/* HOW IT WORKS SECTION */
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box {
+    margin-top: 30px;
+}
+
+/* selektuje first chile od steps box */
+.steps-box:first-child {
+   text-align: right; /* Works for inline-block elements */
+   padding-right: 3%; /* layout will be fluid thats why is in % */
+}
+
+.steps-box:last-child {
+    
+    padding-left: 3%;
+   margin-top: 70px;
+
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 80px;
+
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* CITIES */
+
+.box img {
+   width: 100%;
+   height: auto; 
+   margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px;
+}
+
+/* TESTIMONIALS */
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover;  /*When i want to image cover the whole width of the browser  */
+    color: #fff;
+    background-attachment: fixed;/* When i scroll image stay at the same page  */
+}
+
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+blockquote:before {
+    content: "\0022"; /* from css-tricks.com */
+    display:block;
+    font-size: 500%;
+    position: absolute; /* When child is absolute, parent blockquote must be relative  */
+    top: -5px;
+    left: -5px;
+
+}
+
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* PLANS SECTION */
+
+.section-plans {
+     background-color: #f4f4f4;
+
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid #efefef;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+
+.plan-price-meal {
+    font-size: 1rem; /* root font weight */
+	font-weight: 300;
+}
+
+.plan-price .plan-meal { font-size: 0.8em; }
+
+.planbox div:first-child {
+	background-color: #fcfcfc;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+	text-align: center;
+	border-bottom: none;
+}
+
+.plan-box ul { list-style: none; }
+
+.plan-box ul li { padding: 5px 0; }
+
+/* SIGN UP FORM */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea { 
+    height: 100px;
+}
+
+input[type="checkbox"] { 
+    margin: 10px 5px 10px 0;
+ }
+
+*:focus {outline: none;}
+
+/* FOOTER */
+
+footer {
+	background-color: #333;
+	padding: 30px;
+	font-size: 0.8em;
+}
+
+footer-nav {
+	list-style: none;
+	float: left;
+}
+
+.social-icons {
+	list-style: none;
+	float: right;
+}
+
+.footer-nav li, 
+.social-icons li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+footer-nav li:last-child,
+social-icons li:last-child {
+	margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+	text-decoration: none;
+	border: 0;
+	color: #888;
+	/*transition: color 0.2s;*/
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+	color: #ddd;
+}
+
+footer p {
+	color: #888;
+	text-align: center;
+	margin-top: 20px;
+}
+.social-icons li a:link,
+.social-icons li a:visited {
+	font-size: 1.6em;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-instagram,
+.ion-social-googleplus {
+	transition: color 0.2s;
+}
+
+.ion-social-facebook:hover{
+	color: #3b5998;
+}
+
+.ion-social-twitter:hover{
+	color: #00aced;
+}
+.ion-social-instagram:hover{
+	color: #517fa4;
+}
+.ion-social-googleplus:hover{
+	color: #dd4b39;
+}
+.social-icons li a:hover,
+.social-icons li a:active {
 
 }
